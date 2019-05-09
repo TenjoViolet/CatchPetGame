@@ -19,5 +19,18 @@ namespace CatchPetGame
     {
         public abstract string catchToolName { get; }
         public abstract CatchToolType catchToolType { get; }
+        public abstract int maxCatch { get; }
+        public abstract int minCatch { get; }
+
+        public int GetRandomCatchValue()
+        {
+            return new Random().Next(minCatch, maxCatch);
+        }
     }
+
+
+
+
+
+
 }
