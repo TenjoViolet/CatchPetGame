@@ -12,17 +12,21 @@ namespace CatchPetGame
         public virtual int playerCatchPet { get; }
         public virtual int playerMp { get; set; }
         public BaseCatchTool catchTool { private set; get; }
-        public Action<int, BaseCatchTool> everyCatchPet { get; set; }
+        public Action<int, BaseCatchTool> everyCatchPet { get; set; }//委派
 
         public void EqipmentCatchTool(BaseCatchTool catchTool)
         {
             this.catchTool = catchTool;
         }
 
+        /// <summary>
+        /// 抓寵物
+        /// </summary>
+        /// <param name="targetPet"></param>
         public void Catch(BasePet targetPet)
         {
             int catchValue = GetRandomCatchValueWithCatchTool();
-
+            targetPet.Caught(catchValue);
 
             if (everyCatchPet!=null)
             {
@@ -33,7 +37,7 @@ namespace CatchPetGame
 
         private int GetRandomCatchValueWithCatchTool()
         {
-            return this.catchTool = null ? playerCatchPet : playerCatchPet + this.catchTool.GetRandomCatchValue();
+            return this.catchTool == null ? playerCatchPet : playerCatchPet + this.catchTool.GetRandomCatchValue();
         }
 
     }
