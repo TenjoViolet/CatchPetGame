@@ -75,7 +75,7 @@ namespace CatchPetGame
         public override int petNotCatch { get; set; }
         public override int petNotRunAway { get; set; }
 
-        public int petSkillRunAway { get; set; }
+        public int petSkill { get; set; }
         
         public 超夢()
         {
@@ -84,7 +84,7 @@ namespace CatchPetGame
         }
         public void LearnSkill(BasePetSkill skill)
         {
-            petSkillRunAway = skill.petSkillValue;
+            petSkill = skill.petSkillValue;
         }
 
     }

@@ -11,7 +11,7 @@ namespace CatchPetGame
     /// </summary>
     public interface IPetSkill
     {
-        int petCanRunAway { get; }
+        int petSkill { get; }
 
         void LearnSkill(BasePetSkill skill);
     }
