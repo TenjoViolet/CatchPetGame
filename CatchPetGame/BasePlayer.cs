@@ -43,7 +43,13 @@ namespace CatchPetGame
     }
 
 
+    public class 小智:BasePlayer
+    {
+        public override string playerName => "小智";
+        public override int playerCatchPet => 10;
 
+        
+    }
    
 
     

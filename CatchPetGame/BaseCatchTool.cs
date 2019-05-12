@@ -8,12 +8,8 @@ namespace CatchPetGame
 {
     public enum CatchToolType
     {
-        baseFood,
-        highFood,
-        superFood,
-        baseBall,
-        highBall,
-        spuerBall
+        Food,
+        Ball,
     }
     public abstract class BaseCatchTool
     {
@@ -29,8 +25,40 @@ namespace CatchPetGame
     }
 
 
+    public class  BaseBall:BaseCatchTool
+    {
+        public override string catchToolName => "BaseBall";
+        public override CatchToolType catchToolType => CatchToolType.Ball;
+        public override int maxCatch => 5;
+        public override int minCatch => 1;
 
+    }
 
+    public class HigherBall : BaseCatchTool
+    {
+        public override string catchToolName => "HigherBall";
+        public override CatchToolType catchToolType => CatchToolType.Ball;
+        public override int maxCatch => 10;
+        public override int minCatch => 2;
 
+    }
+
+    public class BaseFood : BaseCatchTool
+    {
+        public override string catchToolName => "BaseFood";
+        public override CatchToolType catchToolType => CatchToolType.Food;
+        public override int maxCatch => 3;
+        public override int minCatch => 1;
+
+    }
+
+    public class HigherFood : BaseCatchTool
+    {
+        public override string catchToolName => "BaseFood";
+        public override CatchToolType catchToolType => CatchToolType.Food;
+        public override int maxCatch => 6;
+        public override int minCatch => 1;
+
+    }
 
 }
